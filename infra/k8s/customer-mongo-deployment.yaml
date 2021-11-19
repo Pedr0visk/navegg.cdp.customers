@@ -16,7 +16,7 @@ spec:
       containers:
         - name: customers-mongo
           image: mongo
-          imagePullPolicy: ifNotPresent
+          imagePullPolicy: IfNotPresent
           volumeMounts:
               - name: customers-mongo-storage
                 mountPath: /data/db
