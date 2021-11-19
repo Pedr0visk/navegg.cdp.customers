@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customers-deployment
+  namespace: cdp-nvg
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: customers
+  template:
+    metadata:
+      labels:
+        component: customers
+    spec:
+      containers:
+        - name: customer
+          image: icr.io/naveggcdp/cdp-customers
+          ports:
+            - containerPort: 42078
+          env:
+            - name: KAFKA_BROKERS
+              value: '208.43.38.123:9094'
+            - name: MONGO_URI
+              value: 'mongodb://customers-mongo-cluster-ip-service:27017/customers'
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY

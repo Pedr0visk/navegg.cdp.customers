@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: customers-cluster-ip-service
+  namespace: nvg-cdp
+spec:
+  type: ClusterIP
+  selector:
+    component: customers
+  ports:
+    - port: 42078
+      targetPort: 42078
