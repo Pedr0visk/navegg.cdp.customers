@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: customers-deployment
-  namespace: cdp-nvg
+  namespace: nvg-cdp
 spec:
   replicas: 3
   selector:
