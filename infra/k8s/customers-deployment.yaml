@@ -38,7 +38,7 @@ spec:
             - containerPort: 42078
           env:
             - name: KAFKA_BROKERS
-              value: '208.43.38.123:9094'
+              value: 'my-cluster-kafka-bootstrap:9092,my-cluster-kafka-bootstrap:9092,my-cluster-kafka-bootstrap:9093'
             - name: MONGO_URI
               value: 'mongodb://customers-mongo-cluster-ip-service:27017/customers'
             - name: JWT_KEY
