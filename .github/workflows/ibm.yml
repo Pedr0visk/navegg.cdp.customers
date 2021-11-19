@@ -22,7 +22,7 @@ env:
   IKS_CLUSTER: ${{ secrets.IKS_CLUSTER }}
   IKS_NAMESPACE: nvg-cdp
   ICR_NAMESPACE: ${{ secrets.ICR_NAMESPACE }}
-  REGISTRY_HOSTNAME: us-south.icr.io
+  REGISTRY_HOSTNAME: us.icr.io
   IMAGE_NAME: cdp-customers
   DEPLOYMENT_NAME: customers-deployment
 
