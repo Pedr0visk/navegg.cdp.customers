@@ -1,4 +1,3 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -18,7 +17,7 @@ spec:
         - name: us-icr-io
       containers:
         - name: customer
-          image: us.icr.io/naveggcdp/cdp-customers:d4f899bac37045f00b3db6f1276e474919cb0ea9
+          image: us.icr.io/naveggcdp/cdp-customers
           ports:
             - containerPort: 42078
           env:
