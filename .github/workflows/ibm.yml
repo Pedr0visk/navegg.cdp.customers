@@ -22,7 +22,7 @@ env:
   IKS_CLUSTER: ${{ secrets.IKS_CLUSTER }}
   IKS_NAMESPACE: nvg-cdp
   ICR_NAMESPACE: ${{ secrets.ICR_NAMESPACE }}
-  REGISTRY_HOSTNAME: icr.io
+  REGISTRY_HOSTNAME: us-south.icr.io
   IMAGE_NAME: cdp-customers
   DEPLOYMENT_NAME: customers-deployment
 
@@ -49,7 +49,7 @@ jobs:
     - name: Authenticate with IBM Cloud CLI
       run: |
         ibmcloud login --apikey "${IBM_CLOUD_API_KEY}" -r "${IBM_CLOUD_REGION}" -g "${IBM_RESOURCE_GROUP}"
-        ibmcloud cr region-set global
+        ibmcloud cr region-set "${IBM_CLOUD_REGION}"
         ibmcloud cr login
 
     # Build the Docker image
