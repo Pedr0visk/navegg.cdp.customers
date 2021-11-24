@@ -70,4 +70,4 @@ jobs:
         ibmcloud ks cluster config --cluster $IKS_CLUSTER
         kubectl config current-context
         kubectl apply -f infra/k8s/customers-deployment.yaml
-        kubectl set image deployments/$DEPLOYMENT_NAME customer=$DOCKER_ID/$IMAGE_NAME:$GITHUB_SHA -n=$IKS_NAMESPACE
+        kubectl set image deployments/$DEPLOYMENT_NAME customer=$REGISTRY_HOSTNAME/$ICR_NAMESPACE/$IMAGE_NAME:$GITHUB_SHA -n=$IKS_NAMESPACE
